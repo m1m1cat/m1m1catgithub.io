@@ -1,0 +1,177 @@
+/* CSS Document */
+
+*{margin:0 auto;list-style:none;}
+
+@charset "utf-8";
+
+.clear { clear:both;}
+
+body{font-family:'Î¢ÈíÑÅºÚ'; background:url(../images/bg1.jpg); background-position:center; background-attachment:fixed; background-size:100% auto; }
+ #wrapper{width:1000px;padding:20px;height:auto;background:#fff;background-color:rgba(255,255,255,0.8);-moz-border-radius:10px;border-radius:10px;height:auto;margin-top:50px;margin-right:auto;margin-bottom:10px;margin-left:auto}
+ .top {
+	background-image: url(../images/top.jpg);
+	background-repeat: no-repeat;
+	background-position:center;
+	background-attachment:fixed;
+	background-size:100% auto;
+	height: 500px;
+}
+.dz1 {
+	padding-top: 100px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 60px;
+	line-height: 50px;
+	font-weight: bolder;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	text-align: center;
+}
+.dzxian {
+	height: 100px;
+}
+.dzxian1 {
+	width: 100px;
+	border-top-width: thin;
+	border-top-style: solid;
+	border-top-color: #FFFFFF;
+	margin-top: 50px;
+}
+.dz3 {
+	font-size: 14px;
+	line-height: 30px;
+	color: #FFFFFF;
+	text-align: center;
+}
+.nav {
+	background-color: #336699;
+	height: 60px;
+}
+.menu {
+	width: 1200px;
+}
+.menu li {
+	float: left;
+	width: 220px;
+	border-right-width: thin;
+	border-right-style: solid;
+	border-right-color: #FFFFFF;
+}
+.menu a {
+	font-size: 20px;
+	line-height: 60px;
+	font-weight: bold;
+	color: #FFFFFF;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+}
+.menu a:hover {
+	color: #000000;
+	background-color: #FFFFCC;
+}
+ .main {
+	background-image: url(../images/main.jpg);
+	background-repeat: no-repeat;
+	background-position:center;
+	background-attachment:fixed;
+	background-size:100% auto;
+	height: 650px;
+}.touxiang {
+	padding-top: 50px;
+	text-align: center;
+}
+.imgtou {
+	height: 200px;
+	width: 200px;
+	border: 5px solid #dedede;
+    -moz-border-radius: 200px;      
+    -webkit-border-radius: 200px;   
+    border-radius:200px;
+	
+}
+.mainabout {
+	font-size: 16px;
+	line-height: 40px;
+	color: #FFFFFF;
+	text-align: center;
+	width: 1200px;
+	padding-top: 50px;
+}
+.more {
+	height: 100px;
+}
+.readmore {
+	text-align: center;
+	height: 40px;
+	width: 100px;
+	background-color: #333366;
+	-webkit-border-radius: 10px;   
+    border-radius:10px;
+}
+.readmore a {
+	font-size: 16px;
+	line-height: 40px;
+	font-weight: bold;
+	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+.foot {
+	font-size: 20px;
+	line-height: 60px;
+	color: #FFFFFF;
+	background-color: #333333;
+	text-align: center;
+	height: 60px;
+}
+.guyuwo {
+	background-image: url(../images/wo.jpeg);
+	height: 800px;
+}
+.womain {
+	width: 1000px;
+	padding-top: 100px;
+}
+.womainzuo {
+	float: left;
+	width: 200px;
+}
+.womainyou {
+	float: right;
+	width: 700px;
+	height: 690px;
+	overflow: auto;
+}
+.tit {
+	font-size: 16px;
+	line-height: 60px;
+	background-color: #f9f9f9;
+	background-image: url(../images/tb.jpg);
+	background-repeat: no-repeat;
+	color: #000000;
+	padding-left: 45px;
+	background-position: 10px;
+	-webkit-border-radius: 10px;   
+    border-radius:10px;
+}
+.aboutxq {
+	font-size: 14px;
+	line-height: 50px;
+	padding: 20px;
+	color: #FFFFFF;
+}
+.syabout {
+	font-size: 12px;
+	line-height: 30px;
+	color: #FFFFFF;
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.imgsy1 {
+	margin: 10px;
+	height: auto;
+	width: 200px;
+	border: 5px solid #dedede;
+}
+
