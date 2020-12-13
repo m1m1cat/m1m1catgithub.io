@@ -1,0 +1,222 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我的个人网站</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<style type="text/css">
+	*{
+		margin:0;
+		padding: 0;
+	}
+	ul{
+		list-style: none;
+	}
+	.list img{
+		width: 100%;
+		vertical-align: top;
+	}
+	.box{
+		width: 700px;
+		height: 350px;
+		margin: 50px auto;
+		overflow: hidden;
+		position: relative;
+	}
+	.list{
+		width: ;
+		height: 350px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		transition: all .5s;
+	}
+	.list li{
+		float: left;
+		width: 700px;
+		height: 350px;
+	}
+	.box span{
+		display: inline-block;
+		width: 40px;
+		height: 80px;
+		position: absolute;
+		top: 50%;
+		margin-top: -40px;
+		background-color: rgba(51,51,51,0.5);
+		cursor: pointer;
+	}
+	.back{
+		left: 0;
+	}
+	.next {
+		right: 0;
+	}
+	.point{
+		position: absolute;
+		bottom: 20px;
+		right: 100px;
+	}
+	.point li{
+		float: left;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		cursor: pointer;
+		background-color: #000;
+		margin-left: 20px;
+	}
+	.point .active{
+		background-color: #01ffff;
+	}
+</style>
+
+
+<body>
+<div class="nav">
+  <div class="menu">
+  <ul>
+  <li><a href="index.html">首页</a></li>
+  <li><a href="wo.html">关于我</a></li>
+  <li><a href="bx.html">ღ( ´･ᴗ･` )比心</a></li>
+  <li><a href="wa.html">跳舞(((((ી(･◡･)ʃ)))))</a></li>
+  <li><a href="ms.html">给我留言</a></li>
+  <li><a href="zc.html">注册</a></li>
+  </ul>
+  
+  </div>
+</div>
+
+
+<div class="guyuwo">
+  <div class="womain">
+    <div class="womainzuo"><span class="touxiang"><img src="images/tou.jpg" width="500" height="500" class="imgtou" /></span></div>
+	<div class="womainyou">
+    <div class="tit">网络安全自留地</div>
+	
+	
+	
+	<div class="syabout">
+	  <p>黑客是一个中文词语，皆源自英文hacker</p>
+	  <p>网络安全，通常指计算机网络的安全，实际上也可以指计算机通信网络的安全。计算机通信网络是将若干台具有独立功能的计算机通过通信设备及传输媒体互连起来，在通信软件的支持下，实现计算机间的信息传输与交换的系统。</p>
+	  <p><img src="images/wa.jpg" width="601" height="300"></p>
+	  <p>而计算机网络是指以共享资源为目的，利用通信手段把地域上相对分散的若干独立的计算机系统、终端设备和数据设备连接起来，并在协议的控制下进行数据交换的系统。计算机网络的根本目的在于资源共享，通信网络是实现网络资源共享的途径，因此，计算机网络是安全的，相应的计算机通信网络也必须是安全的，应该能为网络用户实现信息交换与资源共享。下文中，网络安全既指计算机网络安全，又指计算机通信网络安全。</p>
+	</div>
+	 <div class="box" id="box">
+		<ul class="list" id="list">
+				<li>
+				<a href="javascript:;"><img src="images/sy1.jpg"</a></li>
+				<li>
+				<a href="javascript:;"><img src="images/sy2.jpg"</a></li>
+				<li>
+				<a href="javascript:;"><img src="images/sy3.jpg"</a></li>
+			
+		</ul>
+		<span class="back" id="back"></span>
+		<span class="next" id="next"></span>
+		<ul class="point" id="point">
+			<li></li>
+			<li></li>
+			<li></li>
+			
+		</ul>
+	</div>
+	<div class="sytu"></div>
+	</div>
+  </div>
+</div>
+<div class="foot">©我的个人网站</div>
+</body>
+
+<script type="text/javascript">
+var _box=document.getElementById('box');
+var _list=document.getElementById('list');
+var _li=_list.getElementsByTagName('li');
+var _back=document.getElementById('back');
+var _next=document.getElementById('next');
+var _point=document.getElementById('point');
+var _ali=_point.getElementsByTagName('li');
+var iNow=0;
+var timer=null;
+
+
+// 第一部分：
+// 获取变量暂时不提，接下来的轮播第一步：先自己封装一个函数，如下：
+function move(){
+	// 自己封装的函数内执行一个for循环，该循环是动态给 圆点（li）通过动态添加class名 
+	// 然后在css样式中写li的背景颜色样式改变它的背景颜色。
+	for(var i=0;i<_ali.length;i++){
+		// 让圆点（li）的class名为空。
+		_ali[i].className='';
+	}
+	// 让当前的li圆点添加class名称
+	_ali[iNow].className='active';
+	// 让整个ul向左慢慢移动，移动的距离就是当前li的宽度这个宽度是慢慢增加的。
+	_list.style.left=-_li[0].offsetWidth*iNow+'px';
+}
+
+
+// 第二部分：主要是点击事件。
+// 给我们的左右点击按钮添加点击事件 通过我们的点击按钮的点击事件改变两件事，一：就是让我们的轮播图片执行，也就是执行我们封装好的函数
+// 二：让我们的小圆点相对应的执行。
+_next.onclick=function(){
+	iNow++;
+	if(iNow>=_li.length){
+		iNow=0;
+	}
+	move()
+}
+
+_back.onclick=function(){
+	iNow--;
+	if(iNow<=-1){
+		iNow=_li.length-1;
+	}
+	move()
+}
+
+// 接下来就是让轮播中的小点 点击让相应的图片进行变换
+for(var i=0;i<_ali.length;i++){
+	// 先动态获取我们的小点岁所对应的li,
+	_ali[i].index=i;
+	//给我们的小点添加点击事件
+	//点击圆圈让我们的轮播执行。
+	_ali[i].onclick=function(){
+	//让我们的变量iNow变成当前的小圆点。 
+		iNow=this.index;
+	//执行我们之前封装好的move函数 
+		move()
+	}
+}
+move();
+// 接下来就是第三部分：清除定时器：clearInterval（timer）
+clearInterval(timer)
+// setInterval 无限执行；在我们清除定时器的时候，想让定时器无限执行，执行到达一定地步的时候再清除。也就是说让我们inow一直执行 当其小于li标签的个数（长度）的时候再归0.当然这个过程就是我们轮播图片切换的过程。执行时间是2秒。
+timer=setInterval(function(){
+	iNow++;
+	if(iNow>=_li.length){
+		iNow=0;
+	}
+	move()
+},2000)
+
+// 第四部分：鼠标移入移除效果：而鼠标移入移除的范围就是在我们设定的div块元素中。
+// 鼠标移入的时候清除定时器。
+_box.onmouseover=function(){
+	clearInterval(timer);
+}
+// 鼠标移除的时候开始执行定时器功能。
+_box.onmouseout=function(){
+	clearInterval(timer);
+	timer=setInterval(function(){
+		iNow++;
+		if(iNow>=_li.length){
+			iNow=0;
+		}
+		move()
+	},2000)
+}
+</script>
+
+</html>
